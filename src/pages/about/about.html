@@ -7,5 +7,34 @@
 </ion-header>
 
 <ion-content padding>
+  <ion-spinner name="ios">123</ion-spinner>
+  <ion-spinner name="ios-small">123</ion-spinner>
+  <ion-spinner name="bubbles">123</ion-spinner>
+  <ion-spinner name="circles">123</ion-spinner>
+  <ion-spinner name="dots">123</ion-spinner>
+  ios ios-small bubbles circles crescent dots
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <canvas id="my_signature" style="border: red 2px solid"></canvas>
+      </ion-col>
+      <ion-col>
+        <button ion-button (click)="saveSignature()"> save</button>
+        <button ion-button (click)="clearSinature()">clear</button>
+        <button ion-button (click)="login()">Login</button>
+        <button ion-button (click)="goToNext()">Go to next.</button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col >
+        <ion-img [src]="signatureRes" class="my_signatureRes"></ion-img>
+      </ion-col>
+      <ion-col>{{loginRes}}</ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+
+
 
 </ion-content>

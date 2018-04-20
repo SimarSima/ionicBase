@@ -76,9 +76,17 @@
         <splash height="480" src="resources/ios/splash/Default~iphone.png" width="320" />
         <splash height="2732" src="resources/ios/splash/Default@2x~universal~anyany.png" width="2732" />
     </platform>
-    <plugin name="ionic-plugin-keyboard" spec="~2.2.1" />
-    <plugin name="cordova-plugin-whitelist" spec="1.3.1" />
-    <plugin name="cordova-plugin-device" spec="1.1.4" />
-    <plugin name="cordova-plugin-splashscreen" spec="~4.0.1" />
-    <plugin name="cordova-plugin-ionic-webview" spec="^1.1.11" />
+    <plugin name="cordova-plugin-file" spec="^6.0.1" />
+    <plugin name="cordova-plugin-whitelist" spec="^1.3.3" />
+    <plugin name="cordova-plugin-device" spec="^2.0.1" />
+    <plugin name="cordova-plugin-splashscreen" spec="^5.0.2" />
+    <plugin name="cordova-plugin-ionic-webview" spec="^1.1.16" />
+    <plugin name="cordova-plugin-ionic-keyboard" spec="^2.0.5" />
+    <plugin name="cordova-plugin-file-transfer" spec="^1.7.1" />
+    <plugin name="cordova.plugin.androidShowPDFPlugin" spec="git://github.com/SimarSima/CordovaAndroidShowPDFPlugin.git" />
+    <plugin name="cordova-plugin-fcm" spec="^2.1.2" />
+    <engine name="android" spec="6.3.0" />
+    <plugin name="simar.android.BaiduPushCordovaPlugin" spec="/Users/macos/Documents/from_git/corodova-plugin-BaiduPush">
+        <variable name="ANDROID_KEY" value="cubf0Dswkd8T86Mtvob29qtp" />
+    </plugin>
 </widget>
