@@ -24,29 +24,28 @@ export class DatabaseServiceProvider {
 
   }
 
-  baseTransaction(sql, params) {
+  baseTransaction(sqls) {
     let thisService = this;
     this.getDB().then(function (db: SQLiteObject) {
-      let myList = [];
-      params.forEach(item => {
-        let dto: Array<any> = [];
-        dto.push(sql);
-        dto.push(item);
-        console.info(dto);
-        myList.push(dto);
-      });
-      console.info(myList);
-      db.sqlBatch(myList);
+      db.sqlBatch(sqls);
     });
   }
 
   createTable() {
-    this.baseExecuteSql("create table a(id integer PRIMARY KEY AUTOINCREMENT,col  TEXT)", "");
+    this.baseExecuteSql("create table a(id integer PRIMARY KEY AUTOINCREMENT,col  TEXT,colT TEXT )", "");
   }
 
   insertList(params: Array<any>) {
-    let sql: string = "insert INTO a (col) values (?)";
-    this.baseTransaction(sql, params);
+    let sql: string = "insert INTO a (col,colT) values (?,?)";
+    let myList = [];
+    params.forEach(item => {
+      let dto: Array<any> = [];
+      dto.push(sql);
+      dto.push(item);
+      console.info(dto);
+      myList.push(dto);
+    });
+    this.baseTransaction(myList);
   }
   
 }

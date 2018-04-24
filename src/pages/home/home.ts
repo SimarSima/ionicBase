@@ -1,3 +1,4 @@
+import { BackgroundServiceProvider } from './../../providers/background-service/background-service';
 import { ModuleTwoPage } from './../module-two/module-two';
 import { BaseUtil } from "./../../service/base/BaseUtil";
 import { AutoUpgradeService } from "./../../service/AutoUpgradeService";
@@ -26,7 +27,8 @@ export class HomePage {
     private baseUtil: BaseUtil,
     private sqlService: DatabaseServiceProvider,
     public viewCtrl: ViewController,
-    public appCtrl: App
+    public appCtrl: App,
+    private backgroundService:BackgroundServiceProvider
   ) { }
   ionViewCanEnter() {
     console.info("ionViewCanEnter");
@@ -124,5 +126,11 @@ export class HomePage {
   insertOne(){
     let sql: string = "insert INTO a (col) values ('a')";
     this.sqlService.baseExecuteSql(sql,"");
+  }
+  startBackground(){
+    this.backgroundService.start();
+  }
+  stopBackground(){
+    this.backgroundService.stopService();
   }
 }
