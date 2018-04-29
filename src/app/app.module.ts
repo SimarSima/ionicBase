@@ -25,6 +25,8 @@ import { BackgroundServiceProvider } from '../providers/background-service/backg
 import { DatabaseServiceProvider } from '../providers/database-service/database-service';
 import { SQLite } from '@ionic-native/sqlite';
 import { ModuleTwoPage } from '../pages/module-two/module-two';
+import BackgroudMock from '../providers/NativePluginMock/BackgroundMock';
+
 
 @NgModule({
   declarations: [
@@ -37,9 +39,9 @@ import { ModuleTwoPage } from '../pages/module-two/module-two';
     ProgressBarComponent,
     ModuleTwoPage
   ],
-  imports: [HttpModule,NgxSoapModule,BrowserModule, IonicModule.forRoot(MyApp)],
+  imports: [HttpModule, NgxSoapModule, BrowserModule, IonicModule.forRoot(MyApp)],
   bootstrap: [IonicApp],
-  entryComponents: [MyApp, AboutPage, ContactPage, HomePage, TabsPage,AboutTestPage,ModuleTwoPage],
+  entryComponents: [MyApp, AboutPage, ContactPage, HomePage, TabsPage, AboutTestPage, ModuleTwoPage],
   providers: [
     BackgroundMode,
     BaseUtil,
@@ -54,8 +56,9 @@ import { ModuleTwoPage } from '../pages/module-two/module-two';
     SplashScreen,
     SQLite,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
+    // { provide: BackgroundMode, useClass: BackgroudMock },
     BackgroundServiceProvider,
     DatabaseServiceProvider
   ]
 })
-export class AppModule {}
+export class AppModule { }
